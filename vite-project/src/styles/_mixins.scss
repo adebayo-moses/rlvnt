@@ -1,0 +1,74 @@
+// flexbox
+@mixin flex($justify: flex-start, $align: flex-start, $flow: row wrap) {
+    flex-flow: $flow;
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+// breakpoints
+$breakpoints: (
+	'mobile': 375px,
+	'mobile2x': 480px,
+	'mobile3x': 600px,
+	'tablet': 768px,
+	'tablet2x': 992px,
+	'tablet3x': 1024px,
+	'desktop': 1200px,
+	'desktop2x': 1440px,
+	'desktop3x': 1680px,
+) !default;
+
+@mixin respondMin($breakpoint) {
+	@if map-has-key($breakpoints, $breakpoint) {
+		@media (min-width: map-get($breakpoints, $breakpoint)) {
+			@content;
+		}
+	} @else {
+		@warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "+"Available breakpoints are: #{map-keys($breakpoints)}.";
+	}
+}
+
+@mixin respondMax($breakpoint) {
+	@if map-has-key($breakpoints, $breakpoint) {
+		@media (max-width: map-get($breakpoints, $breakpoint)) {
+			@content;
+		}
+	} @else {
+		@warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "+"Available breakpoints are: #{map-keys($breakpoints)}.";
+	}
+}
+
+// theming
+$themes: (
+  light: (
+	white: #ffffff,
+	black: #000000,
+	black-1: #010101,
+	blue: #0038FF
+  ),
+  dark: (
+    white: #000000,
+	black: #ffffff,
+	black-1: #ffffff,
+	blue: #0038FF
+  ),
+);
+
+@mixin themify($themes) {
+	@each $theme, $map in $themes {
+	  .theme-#{$theme} & {
+		$theme-map: () !global;
+		@each $key, $submap in $map {
+		  $value: map-get(map-get($themes, $theme), '#{$key}');
+		  $theme-map: map-merge($theme-map, ($key: $value)) !global;
+		}
+		@content;
+		$theme-map: null !global;
+	  }
+	}
+  }
+  
+  @function themed($key) {
+	@return map-get($theme-map, $key);
+  }

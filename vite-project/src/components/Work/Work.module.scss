@@ -1,0 +1,170 @@
+.work {
+    min-height: 100vh;
+    background-image: url("../../assets/tree.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    padding: 0 0 3rem 0;
+    background-color: var(--white);
+    &__box {
+        padding: 2rem 3%;
+        h2 {
+            color: $white;
+            font-size: Max(5rem, 32px);
+            font-family: "Space Grotesk", sans-serif;
+            font-weight: 500;
+            letter-spacing: -0.125rem;
+            @include respondMax("tablet") {
+                font-size: Max(3rem, 24px)
+            }
+        }
+    }
+    &__item {
+        @extend %center;
+        flex-direction: column;
+        margin: 5rem auto 0 auto;
+        position: relative;
+        width: Min(240px, 100%);
+        @include respondMax("tablet") {
+            width: Min(300px, 100%);
+            gap: 1.5rem;
+        }
+        h4 {
+            color: $white;
+            font-size: Max(3.1875rem, 25px);
+            font-family: "Inter", sans-serif;
+            font-weight: 700;
+            line-height: 110%;
+            letter-spacing: -0.01594rem;
+            width: 281px;
+            position: absolute;
+            top: 19%;
+            left: -95%;
+            @include respondMax("tablet") {
+                position: unset;
+                top: unset;
+                left: unset;
+                width: 100%;
+                font-size: Max(2rem, 20px);
+                text-align: center;
+            }
+        }
+        button {
+            border-radius: 41px;
+            background-color: $blue;
+            height: Max(2rem, 32px);
+            width: auto;
+            padding: 8.5px 12px;
+            color: $white;
+            font-family: 'Inter', sans-serif;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 10px;
+            line-height: 120%;
+            text-transform: uppercase;
+            position: absolute;
+            bottom: 8%;
+            right: -20%;
+            @include respondMax("tablet") {
+                position: unset;
+                bottom: unset;
+                right: unset;
+            }
+          }
+    }
+    p {
+        &.scroll {
+            font-family: "Inter", sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: Max(0.875rem, 14px);
+            line-height: 133%;
+            color: $white;
+            position: absolute;
+            bottom: 5%;
+            left: 8%;
+        }
+    }
+}
+
+.project {
+    padding: 3rem 3%;
+    background-color: var(--white);
+    &__item {
+        margin-top: 4rem;
+        h2 {
+            color: var(--black-1);
+            font-size: Max(3.1875rem, 32px);
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 500;
+            line-height: 100%;
+            letter-spacing: -0.07969rem;
+            margin-bottom: 1.5rem;
+        }
+        .info {
+            @extend %flex-ac;
+            gap: 4rem;
+            @media screen and (max-width: 500px) {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 2rem;
+            }
+            p {
+                color: var(--black-1);
+                font-size: 0.75rem;
+                font-family: 'Inter', sans-serif;
+                line-height: 130%;
+                font-weight: 400;
+                letter-spacing: 0.00375rem;
+                width: Min(291px, 100%);
+                @media screen and (max-width: 500px) {
+                    width: 100%;
+                }
+            }
+            span {
+                @include flex(flex-start, flex-start, row nowrap);
+                gap: 1rem;
+                h6, dd {
+                    color: var(--black-1);
+                    font-size: 0.75rem;
+                    font-family: 'Inter', sans-serif;
+                    font-weight: 400;
+                    line-height: 130%;
+                    letter-spacing: 0.00375rem;
+                }
+            }
+        }
+        button {
+            border-radius: 41px;
+            background-color: $blue;
+            height: Max(2rem, 32px);
+            width: auto;
+            padding: 8.5px 12px;
+            color: $white;
+            font-family: 'Inter', sans-serif;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 10px;
+            line-height: 120%;
+            text-transform: uppercase;
+            margin-top: 1.5rem;
+          }
+          &__card {
+            @extend %flex-ac-jb;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+            .item {
+                flex-grow: 1;
+                height: 500px;
+                width: 400px;
+                border-radius: 1.5rem;
+                background-image: url("../../assets//mountain.png");
+                background-repeat: no-repeat;
+                background-size: cover;
+                @extend %center;
+                margin-top: 1rem;
+            }
+          }
+    }
+}

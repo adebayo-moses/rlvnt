@@ -1,0 +1,29 @@
+$white: #ffffff;
+$black: #000000;
+$black-1: #010101;
+$blue: #0038FF;
+$grey: #c4c4c4;
+$grey-1: #D9D9D9;
+$shadow-blue: -10px 35px 54px rgba(144, 175, 236, 0.1);
+$shadow-green: -10px 35px 54px rgba(63, 195, 128, 0.15);
+
+$z-indexes: (
+	'noscript',
+	'preloader',
+	'cursor',
+	'navigation',
+	'content',
+	'canvas',
+	'4',
+	'3',
+	'2',
+	'1'
+);
+
+$ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+$ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+
+$border: 1px solid #f2e2da;
+
+// theming
+

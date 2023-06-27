@@ -1,0 +1,90 @@
+.contact {
+    &__box {
+        padding: 3rem 3%;
+        background-color: var(--white);
+        transition: all 0.5s ease-in-out;
+        h6 {
+            color: var(--black-1);
+            font-size: 0.875rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            line-height: 130%;
+            letter-spacing: 0.00375rem;
+        }
+        h1 {
+            color: var(--black-1);
+            font-size: Max(4.5rem, 32px);
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 400;
+            line-height: 100%;
+            letter-spacing: -0.1125rem;
+            width: Min(100%, 975px);
+            margin-top: 2rem;
+            @include respondMax("tablet") {
+                font-size: Max(3rem, 20px);
+              }
+        }
+        form {
+            margin-top: 2rem;
+            width: Min(100%, 713px);
+            label {
+                display: block;
+                color: var(--black-1);
+                font-size: 0.875rem;
+                font-weight: 400;
+                font-family: 'Space Grotesk', sans-serif;
+                line-height: 130%;
+                letter-spacing: -0.00438rem;
+                margin-bottom: 0.5rem;
+                margin-top: 2rem;
+            }
+            input {
+                background-color: $grey-1;
+                height: 5rem;
+                width: 100%;
+                border: unset;
+                padding: 0.5rem 1rem;
+                color: $black-1;
+                font-size: 0.875rem;
+                font-family: 'Space Grotesk', sans-serif;
+                font-weight: 400;
+                line-height: 130%;
+                letter-spacing: -0.00438rem;
+                &::placeholder {
+                    color: $black-1;
+                    font-size: 0.875rem;
+                    font-family: 'Space Grotesk', sans-serif;
+                    font-weight: 400;
+                    line-height: 130%;
+                    letter-spacing: -0.00438rem;
+                }
+            }
+            textarea {
+                background-color: $grey-1;
+                height: 5rem;
+                width: 100%;
+                border: unset;
+                padding: 0.5rem 1rem;
+                color: $black-1;
+                font-size: 0.875rem;
+                font-family: 'Space Grotesk', sans-serif;
+                font-weight: 400;
+                line-height: 130%;
+                letter-spacing: -0.00438rem;
+                resize: none;
+                scroll-behavior: none;
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+                &::placeholder {
+                    color: $black-1;
+                    font-size: 0.875rem;
+                    font-family: 'Space Grotesk', sans-serif;
+                    font-weight: 400;
+                    line-height: 130%;
+                    letter-spacing: -0.00438rem;
+                }
+            }
+        }
+    }
+}
